@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Arepo public version
 ====================
 
@@ -24,3 +25,7 @@ and displayed by opening `./documentation/build/html/index.html`.
 
 A full version of the user guide is also available on the Arepo 
 homepage.
+=======
+# arepo
+AREPO code public version
+>>>>>>> 1546ea3209be03a9f236651f05f39c381aa24ae8
