@@ -22,6 +22,3 @@ and displayed by opening `./documentation/build/html/index.html`.
 
 A full version of the user guide is also available on the Arepo 
 homepage.
-=======
-# arepo
-AREPO code public version
