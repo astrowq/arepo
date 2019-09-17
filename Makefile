@@ -43,6 +43,35 @@ GSL_LIB    = -lgsl -lgslcblas
 MATH_LIB   = -lm -lstdc++
 HWLOC_LIB = -lhwloc
 
+#--------------------------------------- Adjust settings for target computer
+
+ifeq ($(SYSTYPE),"dorc")
+# compiler and its optimization options
+CC       =  mpicc   # sets the C-compiler
+OPTIMIZE =  -std=c11 -ggdb -O3 -Wall -Wno-format-security -Wno-unknown-pragmas -Wno-unused-function
+
+# ifeq (NUM_THREADS,$(findstring NUM_THREADS,$(CONFIGVARS)))
+# OPTIMIZE +=  -fopenmp
+# MPI_COMPILE_FLAGS = $(shell mpicc --showme:compile)
+# CC       =  gcc  $(MPI_COMPILE_FLAGS)      # to replace clang with gcc (mpicc uses clang for some reason)
+# endif
+
+MPICH_LIB = -lmpi
+GSL_INCL = -I/opt/local/include 
+GSL_LIB  = -L/opt/local/lib -lgsl -lgslcblas
+HWLOC_LIB = -L/opt/local/lib -lhwloc
+
+FFTW_INCL = -I/opt/local/include -I/usr/local/include
+FFTW_LIBS = -L/opt/local/lib -I/usr/local/lib
+HDF5_INCL = -I/opt/local/include -DH5_USE_16_API #-DUSE_SSE
+HDF5_LIB  = -L/opt/local/lib  -lhdf5 -lz
+HWLOC_INCL= -I/opt/local/include
+
+GMP_INCL =  -I/home/moon/brandon/local/gmp/include
+GMP_LIB  =  -L/home/moon/brandon/local/gmp/lib64 -lgmp
+
+endif
+
 
 # e.g. Mac OS using MacPorts modules for openmpi, fftw, gsl, hdf5 and hwloc
 ifeq ($(SYSTYPE),"Darwin")
@@ -292,7 +321,9 @@ endif
 #combine compiler options#
 ##########################
 
-CFLAGS = $(OPTIMIZE) $(HDF5_INCL) $(GSL_INCL) $(FFTW_INCL) $(HWLOC_INCL) -I$(BUILD_DIR)
+CFLAGS = $(OPTIMIZE) $(HDF5_INCL) $(GSL_INCL) $(FFTW_INCL) $(GMP_INCL) $(HWLOC_INCL) -I$(BUILD_DIR)
+
+#CFLAGS_CUDA = $(CUDA_OPTIMIZE) $(OPT) $(GSL_INCL) $(FFTW_INCL) $(HDF5INCL) $(ODE_INCL) $(GMP_INCL) $(MKL_INCL) $(CUDA_INCL) -I$(BUILD_DIR)
 
 LIBS = $(GMP_LIB) $(MATH_LIB) $(MPICH_LIB) $(HDF5_LIB) $(GSL_LIB) $(FFTW_LIB) $(HWLOC_LIB)
 
