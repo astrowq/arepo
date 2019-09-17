@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-Arepo public version
-====================
 
 AREPO is a massively parallel code for gravitational n-body 
 systems and hydrodynamics, both on Newtonian as well as 
@@ -28,4 +25,3 @@ homepage.
 =======
 # arepo
 AREPO code public version
->>>>>>> 1546ea3209be03a9f236651f05f39c381aa24ae8

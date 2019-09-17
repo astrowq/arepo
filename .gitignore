@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #eclipse/emacs stuff
 .cproject
 .dep/
@@ -32,7 +31,7 @@ run.sh
 
 #documentation build
 /documentation/build
-=======
+
 # Prerequisites
 *.d
 
@@ -85,4 +84,3 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
->>>>>>> 1546ea3209be03a9f236651f05f39c381aa24ae8
