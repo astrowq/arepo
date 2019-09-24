@@ -21,8 +21,8 @@ Arepo.dSYM
 
 # param, Config, Makefile.systype
 param.txt
-Config.sh
-Makefile.systype
+#Config.sh
+#Makefile.systype
 run.sh
 
 #run and output directory
