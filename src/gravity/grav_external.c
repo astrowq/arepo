@@ -62,6 +62,16 @@ static void gravity_external_get_force(double pos[3], int type, MyIDType ID, dou
 void gravity_external(void)
 {
   mpi_printf("EXTERNALGRAVITY: execute\n");
+  
+  #ifdef STATICNFW
+  {
+  mpi_printf("staticNFW is turned on.\n");
+  mpi_printf("NFW_C = %5.2f; NFW_M200 = %5.2f; Rs = %5.2f; R200 = %5.2f; RhoCrit = %5.2f; V200 = %5.2f; Dc = %5.2f; fac = %5.2f\n", NFW_C, NFW_M200, Rs, R200, RhoCrit, V200, Dc, fac);
+  mpi_printf("boxHalf_X = %7.2f    ", boxHalf_X);
+  mpi_printf("boxHalf_X = %7.2f    ", boxHalf_Y);
+  mpi_printf("boxHalf_X = %7.2f\n", boxHalf_Z);
+  }
+  #endif
 
   TIMER_START(CPU_TREE);
 
