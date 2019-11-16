@@ -5,6 +5,9 @@
 .settings/
 .pydevproject
 *~
+.kdev4
+.directory
+
 
 #OS
 .gdb_history
