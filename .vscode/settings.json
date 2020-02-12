@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\Python37_64\\python.exe"
+    "python.pythonPath": "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\Python37_64\\python.exe",
+    "workbench.colorTheme": "Solarized Dark",
+    "workbench.panel.defaultLocation": "right"
 }

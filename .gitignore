@@ -1,3 +1,5 @@
+.vscode/
+
 #eclipse/emacs stuff
 .cproject
 .dep/
@@ -5,6 +7,9 @@
 .settings/
 .pydevproject
 *~
+.kdev4
+.directory
+
 
 #OS
 .gdb_history
@@ -21,8 +26,8 @@ Arepo.dSYM
 
 # param, Config, Makefile.systype
 param.txt
-Config.sh
-Makefile.systype
+#Config.sh
+#Makefile.systype
 run.sh
 
 #run and output directory
